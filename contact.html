@@ -9,7 +9,7 @@
 <meta name="author" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<title>Magnet - Minimal Portfolio Template</title>
+<title>Contact - 'Ulwan Isma</title>
 
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -66,7 +66,7 @@
                          <h2>Where we can create your visual content alive.</h2>
                     </div>
 
-                    <form name="contactForm" id="contactForm" method="post">
+                    <!--<form name="contactForm" id="contactForm" method="post">
                          <div class="col-md-6 col-sm-6">
                               <input type="text" class="form-control" id="contactName" placeholder="Name" required="">
                          </div>
@@ -81,21 +81,38 @@
                          </div>
                          <div class="col-md-3 col-sm-4">
                             <button class="form-control submitform">Send Message</button>
-                         </div>
-
-                            <!-- contact-warning -->
-                            <div id="message-warning"></div> 
-                
-                            <!-- contact-success -->
-                                <div id="message-success">
-                               <i class="fa fa-check"></i>Your message was sent, thank you!<br>
-                                </div>
+                         </div>-->
 
                          <!--<div class="col-md-3 col-sm-4">
                               <input type="submit" class="form-control submitForm" value="Send Message">
                          </div>-->
 
                     </form>
+
+                    <div class="col-md-offset-1 col-md-10 col-sm-12">
+                         
+                     <div id="form-messages1"></div>
+
+                    <form id="ajax-contact1" method="post" action="inc/mailer.php">
+                         <div class="field col-md-6 col-sm-6">
+                             <input type="text" class="form-control" placeholder="Name" id="name1" name="name1" required>
+                         </div>
+                     
+                         <div class="field col-md-6 col-sm-6">
+                             <input type="email" class="form-control" placeholder="Email" id="email1" name="email1" required>
+                         </div>
+                     
+                         <div class="field col-md-12 col-sm-12">
+                             <textarea id="message1" class="form-control" placeholder="Message" name="message1" required></textarea>
+                         </div>
+                     
+                         <div class="field col-md-3 col-sm-4">
+                             <button type="submit1">Send</button>
+                         </div>
+                     </form>
+
+
+                     </div>
 
                     <!--<form action="mailto:ahmadulwann@gmail.com" method="post">
                          <div class="col-md-6 col-sm-6">
