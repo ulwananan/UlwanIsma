@@ -539,8 +539,8 @@ a:hover, a:active, a:focus {
 
 
 @media only screen and (max-width: 900px){
-  #portfolio #caption {
-    width: 80%;
+  #portfolio #caption, #portfolio #caption p {
+    font-size: 90%;
   }
 }
 
