@@ -472,7 +472,7 @@ a:hover, a:active, a:focus {
   justify-content: center;
   margin: auto;
   display: block;
-  width: 95%;
+  width: 100%;
 }
 
 /* Caption of Modal Image */
