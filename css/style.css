@@ -477,7 +477,6 @@ a:hover, a:active, a:focus {
 
 /* Caption of Modal Image */
 #portfolio #caption {
-  justify-content: center;
   margin: auto;
   display: block;
   width: 80%;
@@ -485,7 +484,7 @@ a:hover, a:active, a:focus {
   text-align: center;
   color: #c1c1c1;
   padding: 15px 0;
-  font-size: 120%;
+  font-size: 100%;
 }
 
 /* Add Animation */
@@ -533,7 +532,14 @@ a:hover, a:active, a:focus {
 
 @media only screen and (max-width: 900px){
   #portfolio .modal-content{
-    top: 20%;
+    top: 25%;
+  }
+}
+
+
+@media only screen and (max-width: 900px){
+  #portfolio #caption {
+    width: 80%;
   }
 }
 
