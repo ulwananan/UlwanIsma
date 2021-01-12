@@ -452,13 +452,14 @@ a:hover, a:active, a:focus {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.95); /* Black w/ opacity */
+  background-color: rgba(0,0,0,1); /* Black w/ opacity */
 }
 
 /* Modal Content (image) */
 #portfolio .modal-content {
+  position: fixed;
   display: block;
-  margin: 0 auto;
+  margin: auto;
   max-width: 900px;
   top: 25%;
   background-color: rgba(0,0,0,0); /* Black w/ opacity */
@@ -468,12 +469,15 @@ a:hover, a:active, a:focus {
 
 /* Modal Content (image) Size */
 #portfolio .modal-content img {
+  justify-content: center;
+  margin: auto;
   display: block;
-  width: 100%;
+  width: 95%;
 }
 
 /* Caption of Modal Image */
 #portfolio #caption {
+  justify-content: center;
   margin: auto;
   display: block;
   width: 80%;
@@ -509,7 +513,7 @@ a:hover, a:active, a:focus {
   right: 35px;
   color: #f1f1f1;
   font-size: 40px;
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 
 #portfolio .close:hover,
@@ -526,6 +530,12 @@ a:hover, a:active, a:focus {
     width: 100%;
   }
 */
+
+@media only screen and (max-width: 900px){
+  #portfolio .modal-content{
+    top: 20%;
+  }
+}
 
 
 /*---------------------------------------
@@ -909,7 +919,7 @@ footer .footer-copyright {
     position: relative;
     padding: 0;
     margin: 0;
-    text-align: right;
+    text-align: center;
 }
 
 .social-icon li {
