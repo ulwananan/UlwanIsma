@@ -40,7 +40,14 @@
                     <span class="icon icon-bar"></span>
                     <span class="icon icon-bar"></span>
                </button>
-               <a href="index.html" class="navbar-brand"><i class="fa fa-magnet"></i></a>
+               <a href="index.html" class="navbar-brand" title="">
+                    <img style="block-size: 50px;" src="images/LogoJPG2.jpg">
+
+                    <div class="logo-overlay">
+                         <img style="block-size: 50px;" src="images/LogoJPG1.jpg">
+                    </div>
+
+               </a>
           </div>
           <div class="collapse navbar-collapse">
                <ul class="nav navbar-nav navbar-right">
@@ -61,12 +68,14 @@
           <div class="row">
 
                <div class="col-md-offset-1 col-md-10 col-sm-12">
+
                     <div class="section-title">
                          <h4>GET IN TOUCH</h4>
                          <h2>Where we can create your visual content alive.</h2>
                     </div>
 
                     <!--<form name="contactForm" id="contactForm" method="post">
+
                          <div class="col-md-6 col-sm-6">
                               <input type="text" class="form-control" id="contactName" placeholder="Name" required="">
                          </div>
@@ -81,39 +90,57 @@
                          </div>
                          <div class="col-md-3 col-sm-4">
                             <button class="form-control submitform">Send Message</button>
-                         </div>-->
+                         </div>
 
-                         <!--<div class="col-md-3 col-sm-4">
+                         <div class="col-md-3 col-sm-4">
                               <input type="submit" class="form-control submitForm" value="Send Message">
-                         </div>-->
+                         </div>
 
-                    </form>
-
-                    <div class="col-md-offset-1 col-md-10 col-sm-12">
-                         
-                     <div id="form-messages1"></div>
-
-                    <form id="ajax-contact1" method="post" action="inc/mailer.php">
+                    </form>-->
+                    
+                    <!-- <div id="form-messages"></div>
+                    
+                    <form id="ajax-contact" action="inc/contactmail.php">
                          <div class="field col-md-6 col-sm-6">
-                             <input type="text" class="form-control" placeholder="Name" id="name1" name="name1" required>
+                              <input type="text" class="form-control" placeholder="Name" id="name" name="name" required="">
                          </div>
                      
                          <div class="field col-md-6 col-sm-6">
-                             <input type="email" class="form-control" placeholder="Email" id="email1" name="email1" required>
+                              <input type="email" class="form-control" placeholder="Email" id="email" name="email" required="">
                          </div>
                      
                          <div class="field col-md-12 col-sm-12">
-                             <textarea id="message1" class="form-control" placeholder="Message" name="message1" required></textarea>
+                             <textarea id="message" class="form-control" rows="5" placeholder="Message" name="message" required=""></textarea>
                          </div>
                      
                          <div class="field col-md-3 col-sm-4">
-                             <button type="submit1">Send</button>
+                              <button type="submit">Send Message</button>
                          </div>
-                     </form>
+                    </form> -->
 
+                    
+                    <div id="form-messages"></div>
 
-                     </div>
+                    <form class="ajaxForm" action="https://formcarry.com/s/_QoUajt1g2">
+                         <div class="col-md-6 col-sm-6">
+                              <input type="text" class="form-control" placeholder="Name" id="name" name="Name" required>
+                         </div>
+                         <div class="col-md-6 col-sm-6">
+                              <input type="email" class="form-control" placeholder="Email" id="email" name="Email" required>
+                         </div>
+                         <div class="col-md-12 col-sm-12">
+                              <input type="text" class="form-control" placeholder="Subject" id="subject" name="Subject">
+                         </div>
+                         <div class="col-md-12 col-sm-12">
+                              <textarea class="form-control" rows="7" placeholder="Message" id="message" name="Message" required></textarea>
+                         </div>
+                         <div class="col-md-12 col-sm-12 text-center">
+                              <button type="submit">Send Message</button>
+                         </div>
+                    </form>
+                    
 
+               
                     <!--<form action="mailto:ahmadulwann@gmail.com" method="post">
                          <div class="col-md-6 col-sm-6">
                               <input type="text" class="form-control" placeholder="Name">
@@ -121,7 +148,7 @@
                          <div class="col-md-6 col-sm-6">
                               <input type="email" class="form-control" placeholder="Email">
                          </div>
-                         <div class="col-md-12 col-sm-12"> 
+                         <div class="col-md-12 col-sm-12">
                               <textarea class="form-control" rows="5" placeholder="Message"></textarea>
                          </div>
                          <div class="col-md-3 col-sm-4">
@@ -165,6 +192,66 @@
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/custom.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<script>
+$(function(){
+
+    $(".ajaxForm").submit(function(e){
+        e.preventDefault();
+        
+        // Get the messages div.
+        var formMessages = $('#form-messages');
+
+        var href = $(this).attr("action");
+
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: href,
+            data: $(this).serialize(),
+            success: function(response){
+                 if(response.status == "success"){
+                      
+                    // Make sure that the formMessages div has the 'success' class.
+                    $(formMessages).removeClass('error');
+                    $(formMessages).addClass('success');
+                    
+                    // Set the message text.
+                    $(formMessages).text(response);
+                    
+                    // Clear the form.
+                    $('#name').val('');
+                    $('#email').val('');
+                    $('#subject').val('');
+                    $('#message').val('');
+
+                    $(formMessages).text('Thank You! Your message has been sent.');
+
+                    //alert("Thank You! Your message has been sent.");
+                }
+
+                else{
+                     // Make sure that the formMessages div has the 'error' class.
+                     $(formMessages).removeClass('success');
+                     $(formMessages).addClass('error');
+                     
+                     // Set the message text.
+                     if (data.responseText !== '') {
+                          $(formMessages).text(data.responseText);
+                         }
+                         else {
+                              $(formMessages).text('Oops! An error occured and your message could not be sent.');
+                         }
+                         
+                     //alert("An error occured: " + response.message);
+                }
+
+            }
+        });
+    });
+});
+</script>
 
 </body>
 </html>

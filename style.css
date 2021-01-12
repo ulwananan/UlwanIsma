@@ -191,6 +191,23 @@ a:hover, a:active, a:focus {
   padding-top: 6px;
 }
 
+.navbar-default .navbar-brand:hover .logo-overlay {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.navbar-default .navbar-brand .logo-overlay {
+  position: absolute;
+  bottom: 12px;
+  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 1); /* Black see-through */
+  color: #f1f1f1;
+  opacity:0;
+  color: white;
+  padding-top: 6px;
+  transition: all 0.4s ease-in-out;
+}
+
 .navbar-default .navbar-brand .fa {
   color: #000;
   font-size: 42px;
@@ -207,7 +224,6 @@ a:hover, a:active, a:focus {
 }
 
 .navbar-default .navbar-nav > li a:hover {
-  transform: scale(1.02);
     color: #000 !important;
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
@@ -281,6 +297,12 @@ a:hover, a:active, a:focus {
 
 .contact-home {
   font-size: 26px;
+}
+
+.contact-home .email-home {
+  font-size: 70%;
+  font-style: normal;
+  letter-spacing: 0px;
 }
 
 
@@ -361,7 +383,7 @@ a:hover, a:active, a:focus {
   cursor: zoom-in;
 }
 
-#portfolio .portfolio-thumb #myImg {
+#portfolio .portfolio-thumb img {
 	-moz-transition: all 0.4s ease-in-out;
 	-o-transition: all 0.4s ease-in-out;
 	-webkit-transition: all 0.4s ease-in-out;
@@ -409,7 +431,7 @@ a:hover, a:active, a:focus {
 	transform: translateX(0);
 }
 
-#portfolio .portfolio-thumb:hover #myImg {
+#portfolio .portfolio-thumb:hover img {
 	-webkit-transform: scale(1.05);
 	-ms-transform: scale(1.05);
 	transform: scale(1.05);
@@ -447,7 +469,7 @@ a:hover, a:active, a:focus {
 /* Modal Content (image) Size */
 #portfolio .modal-content img {
   display: block;
-  max-width: 900px;
+  width: 100%;
 }
 
 /* Caption of Modal Image */
@@ -560,23 +582,8 @@ a:hover, a:active, a:focus {
   border-color: #777;
 }
 
-#contact input,
 #contact select {
   height: 50px;
-}
-
-#contact input[type="submit"] {
-  background: #222;
-  border-radius: 100px;
-  border: none;
-  color: #ffffff;
-  font-weight: 400;
-  transition: all 0.4s ease-in-out;
-}
-
-#contact input[type="submit"]:hover {
-  color: #000;
-  background: rgb(221, 221, 221);
 }
 
 
@@ -593,7 +600,8 @@ a:hover, a:active, a:focus {
   color: #999999;
 }
 
-#contact input {
+#contact button {
+  height: 50px;
   width: 100%;
   padding: 0.5em 0.5em;
   font-size: 1.2em;
@@ -601,9 +609,47 @@ a:hover, a:active, a:focus {
   border: 1px solid #D9D9D9;
 }
 
+#contact button[type="submit"] {
+  background: #222;
+  border-radius: 100px;
+  border: none;
+  width: 250px;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 120%;
+  transition: all 0.3s ease-in-out;
+}
+
+#contact button[type="submit"]:hover {
+  color: #000;
+  background: rgb(226, 226, 226);
+}
+
+#contact input {
+  height: 50px;
+  width: 100%;
+  padding: 0.5em 0.5em;
+  font-size: 1.2em;
+  border-radius: 3px;
+  border: 1px solid #D9D9D9;
+}
+
+#contact input[type="submit"] {
+  background: #222;
+  border-radius: 100px;
+  border: none;
+  color: #ffffff;
+  font-weight: 400;
+  transition: all 0.4s ease-in-out;
+}
+
+#contact input[type="submit"]:hover {
+  color: #000;
+  background: rgb(221, 221, 221);
+}
+
 #contact textarea {
   width: 100%;
-  height: 200px;
   padding: 0.5em 0.5em;
   font-size: 1.2em;
   border-radius: 3px;
@@ -626,7 +672,8 @@ a:hover, a:active, a:focus {
   text-align: center;
 }
 
-#contact button:hover, button:focus {
+/*
+#contact button:hover, #contact button:focus {
   opacity: 0.75;
   cursor: pointer;
 }
@@ -635,8 +682,9 @@ a:hover, a:active, a:focus {
   opacity: 1;
   box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1) inset;
 }
+*/
 
-#contact .success1 {
+#contact .success {
   padding: 1em;
   margin-bottom: 0.75rem;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
@@ -648,7 +696,7 @@ a:hover, a:active, a:focus {
           border-radius: 4px;
 }
 
-#contact .error1 {
+#contact .error {
   padding: 1em;
   margin-bottom: 0.75rem;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
