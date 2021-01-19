@@ -214,12 +214,12 @@
 }
 
 .lg-sub-html {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.28);
   bottom: 0;
   /* color: #EEE; */
   font-size: 16px;
   left: 0;
-  padding: 50px 40px;
+  padding: 18px 40px;
   position: fixed;
   right: 0;
   text-align: center;
@@ -236,6 +236,7 @@
 }
 
 .lg-sub-html p {
+  color: rgba(255, 255, 255, 0.5);
   font-family: 'Work Sans', serif;
   font-size: 120%;
   margin: 5px 0 0;
