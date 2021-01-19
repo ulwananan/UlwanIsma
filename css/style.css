@@ -343,7 +343,7 @@ a:hover, a:active, a:focus {
 
 @media only screen and (max-width: 900px){
   #home h2 {
-    line-height: 80%;
+    line-height: 95%;
   }
 }
 
