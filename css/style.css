@@ -214,13 +214,13 @@ a:hover, a:active, a:focus {
 
 @media only screen and (max-width: 900px){
   .navbar-default .navbar-brand img {
-    block-size: 100%;
+    block-size: 90%;
   }
 }
 
 @media only screen and (max-width: 900px){
   .navbar-default .navbar-brand .logo-overlay {
-    block-size: 0%;
+    display: none;
   }
 }
 
@@ -301,13 +301,19 @@ a:hover, a:active, a:focus {
      align-items: center;
     position: relative;
     text-align: center;
-    padding-top: 60px;
-    padding-bottom: 40px;
+    padding-top: 78px;
+    padding-bottom: 0px;
+}
+
+#home h2 {
+  /* font-size: 22px; */
+  line-height: 35px;
 }
 
 #home hr {
   width: 82px;
-  margin-top: 32px;
+  margin-top: 50px;
+  margin-bottom: 0px;
 }
 
 .contact-home {
@@ -327,6 +333,18 @@ a:hover, a:active, a:focus {
   #home {
     padding-left: 8px;
     padding-right: 8px;
+  }
+}
+
+@media only screen and (max-width: 900px){
+  .contact-home {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 900px){
+  #home h2 {
+    line-height: 25px;
   }
 }
 
@@ -363,14 +381,35 @@ a:hover, a:active, a:focus {
 }
 
 @media only screen and (max-width: 900px){
-  #about h1 {
-    margin-bottom: 15px;
+  #about .section-title h2 {
+    line-height: 25px;
   }
 }
 
-/* #about p {
-  text-align: justify;
-} */
+@media only screen and (max-width: 900px){
+  #about .section-title h4 {
+    line-height: 20px;
+  }
+}
+
+@media only screen and (max-width: 900px){
+  #about h1 {
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 0px;
+  }
+}
+
+#about p {
+  font-size: 120%;
+}
+
+@media only screen and (max-width: 900px){
+  #about p {
+    font-size: 110%;
+    text-align: justify;
+  }
+}
 
 #about .section-title hr {
   margin-bottom: 0px;
@@ -902,6 +941,12 @@ a:hover, a:active, a:focus {
 #contact .col-md-6,
 #contact .col-md-12 {
   padding-left: 0px;
+}
+
+@media only screen and (max-width: 900px){
+  #contact .section-title h4, #contact .section-title h2 {
+    line-height: 95%;
+  }
 }
 
 /*
