@@ -214,13 +214,13 @@ a:hover, a:active, a:focus {
 
 @media only screen and (max-width: 900px){
   .navbar-default .navbar-brand img {
-    block-size: 90%;
+    block-size: 100%;
   }
 }
 
 @media only screen and (max-width: 900px){
   .navbar-default .navbar-brand .logo-overlay {
-    display: none;
+    block-size: 0%;
   }
 }
 
